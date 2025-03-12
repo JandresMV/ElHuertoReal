@@ -1,0 +1,27 @@
+{
+    "frutas": {
+      "frutos_rojos": [
+        { "nombre": "Fresas", "precio_kg": 5000, "precio_lb": 2500, "imagen": "img/frutas/fresa.jpg" },
+        { "nombre": "Cerezas", "precio_kg": 7500, "precio_lb": 3750, "imagen": "img/frutas/cereza.jpg" },
+        { "nombre": "Uvas Rojas", "precio_kg": 6800, "precio_lb": 3400, "imagen": "img/frutas/uvas_rojas.jpg" }
+      ],
+      "frutas_tropicales": [
+        { "nombre": "Mango", "precio_kg": 4500, "precio_lb": 2250, "imagen": "img/frutas/mango.jpg" },
+        { "nombre": "Piña", "precio_kg": 3200, "precio_lb": 1600, "imagen": "img/frutas/pina.jpg" },
+        { "nombre": "Maracuyá", "precio_kg": 5600, "precio_lb": 2800, "imagen": "img/frutas/maracuya.jpg" }
+      ]
+    },
+    "verduras": {
+      "verduras_frescas": [
+        { "nombre": "Zanahoria", "precio_kg": 3000, "precio_lb": 1500, "imagen": "img/verduras/zanahoria.jpg" },
+        { "nombre": "Brócoli", "precio_kg": 4800, "precio_lb": 2400, "imagen": "img/verduras/brocoli.jpg" },
+        { "nombre": "Tomate", "precio_kg": 2600, "precio_lb": 1300, "imagen": "img/verduras/tomate.jpg" }
+      ],
+      "tuberculos_hortalizas": [
+        { "nombre": "Papa", "precio_kg": 2500, "precio_lb": 1250, "imagen": "img/verduras/papa.jpg" },
+        { "nombre": "Cebolla", "precio_kg": 3800, "precio_lb": 1900, "imagen": "img/verduras/cebolla.jpg" },
+        { "nombre": "Ajo", "precio_kg": 9500, "precio_lb": 4750, "imagen": "img/verduras/ajo.jpg" }
+      ]
+    }
+  }
+  
