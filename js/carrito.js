@@ -1,4 +1,4 @@
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+let carrito = []; // Asegúrate de que el carrito esté definido
 
 function agregarAlCarrito(nombre, precio_kg, precio_lb) {
     let unidadSeleccionada = document.getElementById(`unidad-${nombre}`).value;
@@ -52,14 +52,9 @@ function mostrarCarrito() {
 
 // Función para actualizar la cantidad de un producto en el carrito
 function actualizarCantidad(index) {
-    const nuevaCantidad = parseInt(document.getElementById(`cantidad-${index}`).value);
-    if (nuevaCantidad > 0) {
-        carrito[index].cantidad = nuevaCantidad;
-        localStorage.setItem("carrito", JSON.stringify(carrito));
-        mostrarCarrito(); // Actualizar la vista del carrito
-    } else {
-        alert("La cantidad debe ser al menos 1.");
-    }
+    const cantidadInput = document.getElementById(`cantidad-${index}`);
+    carrito[index].cantidad = parseInt(cantidadInput.value);
+    mostrarCarrito(); // Actualizar la vista del carrito
 }
 
 // Función para eliminar un producto del carrito
@@ -69,5 +64,5 @@ function eliminarDelCarrito(index) {
     mostrarCarrito(); // Actualizar la vista del carrito
 }
 
-// Mostrar el carrito al cargar la página
+// Llamar a mostrarCarrito al cargar la página
 document.addEventListener("DOMContentLoaded", mostrarCarrito);

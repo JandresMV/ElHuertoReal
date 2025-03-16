@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function cargarProductos(listaProductos, contenedorId) {
     let contenedor = document.getElementById(contenedorId);
+    contenedor.innerHTML = ""; // Limpiar el contenedor antes de cargar nuevos productos
     listaProductos.forEach(producto => {
         let productoHTML = `
             <div class="producto">
@@ -37,23 +38,18 @@ function cargarProductos(listaProductos, contenedorId) {
 }
 
 function agregarAlCarrito(nombre, precio_kg, precio_lb) {
-    let unidadSeleccionada = document.getElementById(`unidad-${nombre}`).value;
-    let cantidad = parseFloat(document.getElementById(`cantidad-${nombre}`).value);
-    let precio = unidadSeleccionada === "kg" ? precio_kg : precio_lb;
+    const cantidad = document.getElementById(`cantidad-${nombre}`).value;
+    const unidad = document.getElementById(`unidad-${nombre}`).value;
+    const precio = unidad === "kg" ? precio_kg : precio_lb;
 
-    // Si la cantidad es válida
-    if (cantidad > 0) {
-        let productoExistente = carrito.find(item => item.nombre === nombre && item.unidad === unidadSeleccionada);
+    const item = {
+        nombre: nombre,
+        precio: precio,
+        cantidad: parseInt(cantidad),
+        unidad: unidad
+    };
 
-        if (productoExistente) {
-            productoExistente.cantidad += cantidad;
-        } else {
-            carrito.push({ nombre, precio, unidad: unidadSeleccionada, cantidad });
-        }
-
-        localStorage.setItem("carrito", JSON.stringify(carrito));
-        alert(`${cantidad} ${unidadSeleccionada}(s) de ${nombre} añadido al carrito`);
-    } else {
-        alert("Por favor ingresa una cantidad válida.");
-    }
+    // Aquí se debe agregar el item al carrito (puedes usar localStorage o una variable global)
+    carrito.push(item); // Asegúrate de que `carrito` esté definido en un ámbito accesible
+    alert(`${nombre} ha sido añadido al carrito.`);
 }
