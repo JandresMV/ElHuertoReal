@@ -1,4 +1,4 @@
-let carrito = []; // Asegúrate de que el carrito esté definido
+let carrito = JSON.parse(localStorage.getItem("carrito")) || []; // Cargar carrito desde localStorage
 
 function agregarAlCarrito(nombre, precio_kg, precio_lb) {
     let unidadSeleccionada = document.getElementById(`unidad-${nombre}`).value;
@@ -29,6 +29,7 @@ function mostrarCarrito() {
 
     if (carrito.length === 0) {
         listaCarrito.innerHTML = "<p>No hay productos en el carrito.</p>";
+        document.getElementById("total").innerText = `$0.00`; // Establecer el total en cero
         return;
     }
 
@@ -36,7 +37,7 @@ function mostrarCarrito() {
         const productoHTML = `
             <div class="producto-carrito">
                 <h3>${item.nombre}</h3>
-                <p>Precio: $${item.precio} (${item.unidad})</p>
+                <p>Precio por libra: $${item.precio} (lb)</p>
                 <label>Cantidad:</label>
                 <input type="number" id="cantidad-${index}" value="${item.cantidad}" min="1" onchange="actualizarCantidad(${index})">
                 <button onclick="eliminarDelCarrito(${index})">Eliminar</button>
@@ -47,20 +48,21 @@ function mostrarCarrito() {
 
     // Mostrar el total
     const total = carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
-    document.getElementById("total").innerText = `$${total}`;
+    document.getElementById("total").innerText = `$${total.toFixed(2)}`;
 }
 
 // Función para actualizar la cantidad de un producto en el carrito
 function actualizarCantidad(index) {
     const cantidadInput = document.getElementById(`cantidad-${index}`);
     carrito[index].cantidad = parseInt(cantidadInput.value);
+    localStorage.setItem("carrito", JSON.stringify(carrito)); // Actualizar localStorage
     mostrarCarrito(); // Actualizar la vista del carrito
 }
 
 // Función para eliminar un producto del carrito
 function eliminarDelCarrito(index) {
     carrito.splice(index, 1); // Eliminar el producto del carrito
-    localStorage.setItem("carrito", JSON.stringify(carrito));
+    localStorage.setItem("carrito", JSON.stringify(carrito)); // Actualizar localStorage
     mostrarCarrito(); // Actualizar la vista del carrito
 }
 
