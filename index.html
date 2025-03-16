@@ -5,44 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Huerto Real - Inicio</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <!-- Menú de Navegación -->
     <header>
-        <h1>El Huerto Real</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="productos.html">Productos</a></li>
-                <li><a href="carrito.html">Carrito</a></li>
-                <li><a href="pago.html">Pago</a></li>
-            </ul>
-        </nav>
+        <img src="img/logo.png" alt="Logo El Huerto Real">
+        <h1 style="display: inline;">El Huerto Real</h1>
     </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="carrito.html">Carrito</a></li>
+            <li><a href="pago.html">Pago</a></li>
+        </ul>
+    </nav>
 
     <!-- Sección "Sobre Nosotros" -->
-    <section id="sobre-nosotros">
+    <section id="sobre-nosotros" class="contenedor">
         <h2>Sobre Nosotros</h2>
-        <p>Bienvenido a <strong>El Huerto Real</strong>, tu tienda en línea de frutas y verduras frescas. Nos enfocamos en ofrecer productos de alta calidad, directamente del campo a tu hogar.</p>
-        <img src="imagenes/huerto.jpg" alt="Imagen de frutas y verduras frescas">
+        <p style="margin-bottom: 5px;">Bienvenido a <strong>El Huerto Real</strong>, tu tienda en línea de frutas y verduras frescas. Nos enfocamos en ofrecer productos de alta calidad, directamente del campo a tu hogar.</p>
+        <img src="img/huerto.jpeg" alt="Imagen de frutas y verduras frescas" class="imagen-huerto"> 
     </section>
 
     <!-- Sección "Cómo Funciona" -->
-    <section id="como-funciona">
+    <section id="como-funciona" class="contenedor">
         <h2>¿Cómo Funciona?</h2>
         <p>Realiza tu compra en 3 simples pasos:</p>
-        <ol>
-            <li>Explora nuestra variedad de <a href="productos.html">productos frescos</a>.</li>
-            <li>Añade los productos a tu <a href="carrito.html">carrito de compras</a>.</li>
-            <li>Finaliza tu pedido y simula el pago en nuestra <a href="pago.html">pasarela de pago</a>.</li>
-        </ol>
+        <div class="pasos-container">
+            <a href="productos.html" class="paso">
+                <h3>Paso 1</h3>
+                <p>Explora nuestra variedad de <strong>productos frescos</strong>.</p>
+            </a>
+            <a href="carrito.html" class="paso">
+                <h3>Paso 2</h3>
+                <p>Añade los productos a tu <strong>carrito de compras</strong>.</p>
+            </a>
+            <a href="pago.html" class="paso">
+                <h3>Paso 3</h3>
+                <p>Finaliza tu pedido y simula el pago en nuestra <strong>pasarela de pago</strong>.</p>
+            </a>
+        </div>
         <img src="imagenes/como-funciona.jpg" alt="Pasos de compra">
     </section>
 
     <!-- Pie de Página -->
     <footer>
-        <p>&copy; 2025 El Huerto Real - Desarrollado por Santiago Supelano G.</p>
+        <h3>El Huerto Real - Frutas y Verduras</h3>
+        <p>Calle Principal #123, Ciudad</p>
+        <p>Teléfono: 123-456-7890 | Email: info@elhuertoreal.com</p>
+        <p>&copy; 2025 Desarrollado por Santiago Supelano G.</p>
     </footer>
 
 </body>

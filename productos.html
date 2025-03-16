@@ -5,25 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos - El Huerto Real</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>El Huerto Real</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="productos.html">Productos</a></li>
-                <li><a href="carrito.html">Carrito</a></li>
-                <li><a href="pago.html">Pago</a></li>
-            </ul>
-        </nav>
+        <img src="img/logo.png" alt="Logo El Huerto Real">
+        <h1 style="display: inline;">El Huerto Real</h1>
     </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="carrito.html">Carrito</a></li>
+            <li><a href="pago.html">Pago</a></li>
+        </ul>
+    </nav>
 
     <main>
         <section id="frutas">
             <h2>Frutas 🍎</h2>
             <h3>Frutos Rojos 🍓</h3>
-            <div id="frutos-rojos" class="productos-container"></div>
+            <div id="frutos-rojos" class="productos-container">
+               
+            </div>
 
             <h3>Frutas Tropicales 🍍</h3>
             <div id="frutas-tropicales" class="productos-container"></div>
@@ -37,10 +41,35 @@
             <h3>Tubérculos y Hortalizas 🥔</h3>
             <div id="tuberculos-hortalizas" class="productos-container"></div>
         </section>
+
+        <!-- Sección de Beneficios -->
+        <section id="beneficios" class="contenedor">
+            <h2>¿Por qué elegirnos?</h2>
+            <div class="beneficios-container">
+                <div class="beneficio">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Envío Rápido</h3>
+                    <p>Entregamos tus productos en menos de 24 horas para garantizar su frescura.</p>
+                </div>
+                <div class="beneficio">
+                    <div class="feature-icon">🌱</div>
+                    <h3>100% Orgánico</h3>
+                    <p>Todos nuestros productos son cultivados sin pesticidas ni químicos dañinos.</p>
+                </div>
+                <div class="beneficio">
+                    <div class="feature-icon">💯</div>
+                    <h3>Calidad Garantizada</h3>
+                    <p>Si no estás satisfecho con la calidad, te devolvemos tu dinero.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 El Huerto Real - Desarrollado por Santiago Supelano G.</p>
+        <h3>El Huerto Real - Frutas y Verduras</h3>
+        <p>Calle Principal #123, Ciudad</p>
+        <p>Teléfono: 123-456-7890 | Email: info@elhuertoreal.com</p>
+        <p>&copy; 2025 Desarrollado por Santiago Supelano G.</p>
     </footer>
 
     <script src="js/productos.js"></script>
