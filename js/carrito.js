@@ -37,7 +37,7 @@ function mostrarCarrito() {
         const productoHTML = `
             <div class="producto-carrito">
                 <h3>${item.nombre}</h3>
-                <p>Precio por libra: $${item.precio} (lb)</p>
+                <p><span class="precio">Precio por libra:</span> <span class="precio">${formatearPrecio(item.precio)} (lb)</span></p>
                 <label>Cantidad:</label>
                 <input type="number" id="cantidad-${index}" value="${item.cantidad}" min="1" onchange="actualizarCantidad(${index})">
                 <button onclick="eliminarDelCarrito(${index})">Eliminar</button>
@@ -48,7 +48,7 @@ function mostrarCarrito() {
 
     // Mostrar el total
     const total = carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
-    document.getElementById("total").innerText = `$${total.toFixed(2)}`;
+    document.getElementById("total").innerHTML = `<span class="total">${formatearPrecio(total)}</span>`;
 }
 
 // Función para actualizar la cantidad de un producto en el carrito

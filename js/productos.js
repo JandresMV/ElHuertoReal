@@ -19,7 +19,7 @@ function cargarProductos(listaProductos, contenedorId) {
                 <img src="${producto.imagen}" alt="${producto.nombre}">
                 <h3>${producto.nombre}</h3>
                 <p class="descripcion">${producto.descripcion}</p>
-                <p>Precio: $${producto.precio_kg}/kg | $${producto.precio_lb}/lb</p>
+                <p><span class="precio">Precio:</span> <span class="precio">${formatearPrecio(producto.precio_kg)}/kg</span> | <span class="precio">${formatearPrecio(producto.precio_lb)}/lb</span></p>
 
                 <label for="unidad-${producto.nombre}">Comprar por:</label>
                 <select id="unidad-${producto.nombre}">
