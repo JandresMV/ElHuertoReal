@@ -30,6 +30,7 @@ function mostrarCarrito() {
     if (carrito.length === 0) {
         listaCarrito.innerHTML = "<p>No hay productos en el carrito.</p>";
         document.getElementById("total").innerText = `$0.00`; // Establecer el total en cero
+        document.getElementById("boton-limpiar-container").style.display = "none"; // Ocultar el botón de limpiar
         return;
     }
 
@@ -47,8 +48,16 @@ function mostrarCarrito() {
     });
 
     // Mostrar el total
-    const total = carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
+    const subtotal = carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
+    const costoEnvio = 10000; // Costo de envío
+    const total = subtotal + costoEnvio; // Total a pagar
+    
+    document.getElementById("subtotal").innerHTML = formatearPrecio(subtotal);
+    document.getElementById("envio").innerHTML = formatearPrecio(costoEnvio);
     document.getElementById("total").innerHTML = `<span class="total">${formatearPrecio(total)}</span>`;
+
+    // Mostrar el botón de limpiar
+    document.getElementById("boton-limpiar-container").style.display = "block"; // Mostrar el botón de limpiar
 }
 
 // Función para actualizar la cantidad de un producto en el carrito
@@ -64,6 +73,13 @@ function eliminarDelCarrito(index) {
     carrito.splice(index, 1); // Eliminar el producto del carrito
     localStorage.setItem("carrito", JSON.stringify(carrito)); // Actualizar localStorage
     mostrarCarrito(); // Actualizar la vista del carrito
+}
+
+// Función para limpiar el carrito
+function limpiarCarrito() {
+    carrito = []; // Vaciar el carrito
+    localStorage.setItem("carrito", JSON.stringify(carrito)); // Actualizar el almacenamiento local
+    mostrarCarrito(); // Volver a mostrar el carrito
 }
 
 // Llamar a mostrarCarrito al cargar la página
