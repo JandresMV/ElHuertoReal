@@ -307,3 +307,48 @@ h2 {
     flex-direction: column; /* Alinear productos en columna */
     align-items: center; /* Centrar productos horizontalmente */
 }
+
+/* Estilos específicos para la página de pago */
+.pago-contenedor {
+    max-width: 600px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 20px; /* Espaciado interno */
+    background-color: #fff; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.pago-contenedor h2 {
+    text-align: center; /* Centrar el título */
+    color: #333; /* Color del texto */
+}
+
+.pago-contenedor label {
+    display: block; /* Hacer que las etiquetas ocupen toda la línea */
+    margin: 10px 0 5px; /* Espaciado entre etiquetas y campos */
+    font-weight: bold; /* Negrita para las etiquetas */
+}
+
+.pago-contenedor input[type="text"],
+.pago-contenedor input[type="tel"] {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ddd; /* Borde suave */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-bottom: 15px; /* Espaciado inferior */
+}
+
+.pago-contenedor button {
+    background-color: #ff6600; /* Color del botón */
+    color: white;
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar el mouse */
+    width: 100%; /* Ancho completo */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.pago-contenedor button:hover {
+    background-color: #0057b8; /* Color al pasar el mouse */
+}

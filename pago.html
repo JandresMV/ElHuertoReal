@@ -21,19 +21,21 @@
     </nav>
 
     <main>
-        <h2>Confirmar Compra</h2>
-        <form id="formPago">
-            <label>Nombre:</label>
-            <input type="text" id="nombre" required>
-            
-            <label>Dirección:</label>
-            <input type="text" id="direccion" required>
-            
-            <label>Teléfono:</label>
-            <input type="tel" id="telefono" required>
+        <div class="pago-contenedor">
+            <h2>Confirmar Compra</h2>
+            <form id="formPago" onsubmit="return validarFormulario()">
+                <label>Nombre:</label>
+                <input type="text" id="nombre" required pattern="^(\w+\s+){1,}\w+$" title="Por favor, ingrese al menos un nombre y un apellido.">
+                
+                <label>Dirección:</label>
+                <input type="text" id="direccion" required>
+                
+                <label>Teléfono:</label>
+                <input type="tel" id="telefono" required pattern="\d{10}" title="Por favor, ingrese un número de teléfono válido (10 dígitos).">
 
-            <button type="submit">Finalizar Compra</button>
-        </form>
+                <button type="submit">Finalizar Compra</button>
+            </form>
+        </div>
     </main>
 
     <footer>
